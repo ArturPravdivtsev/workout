@@ -1,0 +1,473 @@
+/* Fonts family */
+@font-face {
+    font-family: 'Ubuntu-Regular';
+    src: url('../fonts/Ubuntu-Regular.eot');
+    src: url('../fonts/Ubuntu-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Ubuntu-Regular.woff2') format('woff2'),
+        url('../fonts/Ubuntu-Regular.woff') format('woff'),
+        url('../fonts/Ubuntu-Regular.ttf') format('truetype'),
+        url('../fonts/Ubuntu-Regular.svg#Ubuntu-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Ubuntu-Bold';
+    src: url('../fonts/Ubuntu-Bold.eot');
+    src: url('../fonts/Ubuntu-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Ubuntu-Bold.woff2') format('woff2'),
+        url('../fonts/Ubuntu-Bold.woff') format('woff'),
+        url('../fonts/Ubuntu-Bold.ttf') format('truetype'),
+        url('../fonts/Ubuntu-Bold.svg#Ubuntu-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Ubuntu-Light';
+    src: url('../fonts/Ubuntu-Light.eot');
+    src: url('../fonts/Ubuntu-Light.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Ubuntu-Light.woff2') format('woff2'),
+        url('../fonts/Ubuntu-Light.woff') format('woff'),
+        url('../fonts/Ubuntu-Light.ttf') format('truetype'),
+        url('../fonts/Ubuntu-Light.svg#Ubuntu-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu-Medium.eot');
+    src: url('../fonts/Ubuntu-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Ubuntu-Medium.woff2') format('woff2'),
+        url('../fonts/Ubuntu-Medium.woff') format('woff'),
+        url('../fonts/Ubuntu-Medium.ttf') format('truetype'),
+        url('../fonts/Ubuntu-Medium.svg#Ubuntu-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+.ubuntu() {
+	font-family: 'Ubuntu-Regular';
+}
+.bold() {
+	font-family: 'Ubuntu-Bold';
+}
+.light() {
+	font-family: 'Ubuntu-Light';
+}
+.medium() {
+	font-family: 'Ubuntu';
+}
+
+
+/* Colors */
+@btn-color:#73bd1c;
+@icons-color:#90ae1b;
+@bg-dark:#160710;
+@danger:#ff0000;
+@text:#fff;
+@light:#fff;
+
+/* basic settings */
+.row {width: 100%;}
+body {
+    font-size: 10px;
+    .ubuntu();
+    color:@text;
+    background-color: @bg-dark;
+}
+
+a:hover{
+    text-decoration: none;
+    color:@icons-color;
+}
+
+button, input, a, textarea {
+    text-decoration: none;
+    color: @text;
+    &:focus{
+        outline: none;
+    }
+}
+
+.logo {
+    display: inline-block;
+    &-img{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+    }
+    &-text{
+        display: inline-block;
+        font-size: 1.3rem;
+        vertical-align: middle;
+        padding-top: 1rem;
+    }
+}
+
+.navbar-link {
+    font-size: 1.2rem;
+        .bold();
+        &-colored {
+            color:@icons-color;
+            font-size: 1.2rem;
+            .bold();
+        }
+        &-colored:hover {
+            color:@text;
+        }
+}
+
+.main {
+    position: relative;
+    background-image: url(../img/main-bg-1.png);
+    background-size: cover;
+    opacity: .80;
+    width: 100%;
+    background-position-y: 50%;
+    background-position-x: 90%;
+    &::before {
+        content: "";
+        position: absolute;
+        width: 100%; 
+        height: 100%;  
+        opacity: .75; 
+        z-index: -1;
+        background: url(../img/main-bg-2.png);
+        background-position-y: 8%;
+        background-position-x: 50%;
+        top:0;
+    }
+    &-title {
+        margin-top: 10rem;
+        margin-bottom: 4rem;
+        text-align: center;
+        font-size: 4.5rem;
+        .light();
+        span {
+            text-align: center;
+            .bold();
+        }
+    }
+    &-subtitle {
+        text-align: center;
+        .light();
+        font-size: 2rem;        
+    }
+    &-btn {
+        position: relative;
+        background-image: url(../img/award.png), url(../img/award.png);
+        background-repeat: no-repeat;
+        background-position: left, right;
+        background-size: 7rem;
+        width: 27rem;
+        height: 6rem;
+        font-size: 1.2rem;
+	    border-radius: 100px;
+	    background-color: @btn-color;
+	    border: none;
+        transition: all 0.2s;
+        display: inline-block;
+        text-align: center;
+        margin-top: 3.5rem;
+        margin-bottom: 10rem;
+        &:hover {
+            background-color: darken(@btn-color, 5%);
+        }
+        &-price {
+            .light();
+            font-size: 1.7rem;
+            line-height: 1;
+        }
+        &-text {
+            .medium();
+            font-size: 1.7rem;
+            line-height: 1;
+        }
+    }
+}
+
+hr {
+    allign:center;
+    width: 7rem;
+    border: none;
+    background-color: @icons-color;
+    color: @icons-color;
+    height: 2px;
+}
+
+.person-info {
+    text-align: center;
+    &-img {
+        padding-left: 2rem;
+        display: inline-block;
+        text-align: center;
+    }
+    &-text {
+        padding-left: 2.5rem;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: center;
+        .light();
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 1199px){
+    .feedback {
+        &-form {
+            padding: 3rem 5rem;
+        }
+        .fotorama {
+            margin-bottom: 3rem;
+        }
+    }
+}
+@media (min-width: 991px) and (max-width: 1350) {
+    .lesson-block {
+        margin-left: 0.7rem;
+        
+    }
+}
+@media (max-width: 767px) {
+    .logo {
+        &-img {
+            width: 50px;
+            height: 50px;
+            margin-top: 2rem;
+        }
+        &-text {
+            display: none;
+        }
+    }
+    .navbar-text {
+        display: inline-block;
+        margin-top: 3.5rem;
+        margin-left: 1.5rem;
+    }
+}
+
+.lesson {
+    &-title {
+        .light();
+        text-align: center;
+        font-size: 2.5rem;
+        margin-top: 8rem;
+        margin-bottom: 6rem;
+        span {
+            .medium();
+            font-size: 2.5rem;
+        }
+    }
+    &-block {
+        position: relative;
+        &-title {
+            position: absolute;
+            bottom: 3.5rem;
+            left: 2rem;
+        }
+        &-views {
+            position: absolute;
+            display: inline-block;
+            bottom: 0.5rem;
+            left: 3.8rem;
+        }
+        &-messages {
+            position: absolute;
+            display: inline-block;
+            margin: 0 auto;
+            bottom: 1.5rem;
+            left: 8.8rem;
+        }
+        &-money {
+            position: absolute;
+            display: inline-block;
+            bottom: 0.5rem;
+            left: 12.2rem;
+        }
+        &-img {
+            position: absolute;
+            display: inline-block;
+            margin: 0 auto;
+            &-views {
+                position: absolute;
+                display: inline-block;
+                bottom: 1.5rem;
+                left: 2rem;
+            }
+            &-messages {
+                position: absolute;
+                display: inline-block;
+                margin: 0 auto;
+                bottom: 1.5rem;
+                left: 6rem;
+            }
+            &-money {
+                position: absolute;
+                display: inline-block;
+                bottom: 1.5rem;
+                left: 10.5rem;
+            }
+        }
+        width: 280px;
+        height: 180px;
+        margin-bottom: 0.7rem;
+        margin-left: 0.7rem;
+    }
+    &-img {
+        width: 280px;
+        height: 180px;
+        margin-bottom: 0.7rem;
+        margin-left: 0.7rem;
+    }
+    &-more {
+        img {
+            width: 3rem;
+            height: 3rem;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            text-align: center;
+            text-decoration: underline;
+            .ubuntu();
+            font-size: 1.6rem;
+        }
+    }
+}
+
+.third-screen {
+    background-image: url(../img/circle.svg);
+        background-size: cover;
+        width: 60rem;
+        height: 60rem;
+        margin: 3rem auto;
+    &-title {
+        margin-top: 10rem;
+        margin-bottom: 4rem;
+        text-align: center;
+        font-size: 4.5rem;
+        .light();
+        p {
+            text-align: center;
+            .bold();
+        }
+    }
+    &-subtitle {
+        text-align: center;
+        .light();
+        font-size: 2rem;        
+    }
+    &-person {
+        margin-left: 3rem;
+        &-img {
+            padding-left: 2rem;
+            display: inline-block;
+            text-align: center;
+        }
+        &-text{
+            padding-left: 2.5rem;
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+            .light();
+            font-size: 1.7rem;
+        }
+    }
+    &-btn {
+        position: relative;
+        background-image: url(../img/award.png), url(../img/award.png);
+        background-repeat: no-repeat;
+        background-position: left, right;
+        background-size: 7rem;
+        width: 27rem;
+        height: 6rem;
+        font-size: 1.2rem;
+	    border-radius: 100px;
+	    background-color: @btn-color;
+	    border: none;
+        transition: all 0.2s;
+        text-align: center;
+        display: inline-block;
+        margin-top: 3.5rem;
+        margin-bottom: 10rem;
+        &:hover {
+            background-color: darken(@btn-color, 5%);
+        }
+        &-price {
+            .light();
+            font-size: 1.7rem;
+            line-height: 1;
+        }
+        &-text {
+            .medium();
+            font-size: 1.7rem;
+            line-height: 1;
+        }
+    }
+}
+
+.playlist {
+    h3 {
+        text-align: center;
+        .light();
+        font-size: 3rem;
+        margin-bottom: 3.8rem;
+    }
+    &-1 {
+        display: inline-block;
+        background-image: url(../img/playlist/1.jpg);
+        background-size: cover;
+        width: 280px;
+        height: 180px;
+        border-radius: 15px;
+        margin-right: 0.5rem;
+    }
+    &-2 {
+        display: inline-block;
+        background-image: url(../img/playlist/2.jpg);
+        background-size: cover;
+        width: 280px;
+        height: 180px;
+        border-radius: 15px;
+        margin-right: 0.5rem;
+    }
+    &-3 {
+        display: inline-block;
+        background-image: url(../img/playlist/3.jpg);
+        background-size: cover;
+        width: 280px;
+        height: 180px;
+        border-radius: 15px;
+    }
+    &-slider-item {
+        p {
+            padding-top: 13rem;
+            margin-left: 2rem;
+        }
+        .ubuntu();
+        font-size: 1.3rem;
+        //margin-top: 1.5rem;
+    }
+}
+
+.footer {
+    .light();
+    font-size: 1.3rem;
+    &-links {
+        margin-top: 4rem;
+    }
+}
+
+
+
+
+
